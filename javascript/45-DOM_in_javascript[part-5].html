@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<div id="div1">
+<p id="p1">This is a paragraph.</p>
+<p id="p2">This is another paragraph.</p>
+</div>
+
+<script>
+function load(){
+	var para = document.createElement("p");
+	var node = document.createTextNode("This is new.");
+	para.appendChild(node);
+	var element = document.getElementById("div1");
+	element.appendChild(para);
+}
+function before(){
+	var para = document.createElement("p");
+	var node = document.createTextNode("This is new.");
+	para.appendChild(node);
+	var element = document.getElementById("div1");
+	var child = document.getElementById("p1");
+	element.insertBefore(para,child);
+}
+function remove(){
+	var parent = document.getElementById("div1");
+	var child = document.getElementById("p1");
+	parent.removeChild(child);
+}
+function replace(){
+	var parent = document.getElementById("div1");
+	var child = document.getElementById("p1");
+	var para = document.createElement("p");
+	var node = document.createTextNode("This is new.");
+	para.appendChild(node);
+	parent.replaceChild(para,child);
+}
+
+
+//Calling functions
+load();
+before();
+replace();
+remove();
+</script>
+
+</body>
+</html>
